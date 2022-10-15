@@ -8,12 +8,18 @@
 <link rel="stylesheet" href=css/style.css>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,600;1,800&display=swap" rel="stylesheet">
-
+<link rel="icon" href="./images/cam.ico">
 </head>
 
 <body class="bg-color">
-  
+
     <section class="header-section" style="position:fixed; width: 100%; z-index: 1; background-color: black;">
+         <!-- loading... -->
+    <section class="top-fit">
+      <progress id="pgs" max="100" value="0">
+      </progress>
+     </section>
+    <!--  -->
         <div class="container-fluid">
             <div class="row">
                 <div class=col-lg-12>
@@ -68,24 +74,28 @@
         </div>
         
       </div>
-            
-          
 
     </section>
     
 <section class="about-section pt-4 pb-5 text-center text-white" id="about-section">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
       <div class="col-lg-12">
       <h3 class="text-uppercase pb-4">About us</h3>
-      <p class="p-b-3">Photographers are artists with the camera, using a blend of technical skills and an artistic eye to take pictures of people, places, landscapes, food, you name it. Photographers can work as fine artists, wedding and event photographers, or sell their photos to commercial clients.</p>
+      <p class="p-b-3">Photographers are artists with the camera, using a blend of technical skills and an artistic eye to take pictures of 
+        people, places, landscapes, food, you name it.
+         Photographers can work as fine artists, wedding and event photographers, or sell their photos to commercial clients.
+         Photography is the art, application, and practice of creating durable images by recording light, either electronically by means of 
+         an image sensor, or chemically by means of a 
+         light-sensitive material such as photographic film.
+        </p>
       <a href="#" class=" btn btn-success text-uppercase ">about us</a>
     </div>
     </div>
   </div>
 </section>
 <section class="our services pt-5 pb-5 text-white text-center" id="service-section">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h3 class="text-uppercase pb-4">Our Services</h3>
@@ -124,23 +134,38 @@
 <section class="contact-us"  id="contact-section">
   
     <div class="col-lg-12">
-      <div class="row" style="widows: 100%;;padding: 10px;">
-        <div class="container-fluid" >
+      <div class="row" style="padding: 10px;">
+        <div class="container" >
             <h3 class="text-uppercase pb-4 text-center text-white">Contact Us</h3>  
-            
-                <form method="post" action="https://formspree.io/xrgywrrj">
-                    <div class="form-group ">
-                        <input type="text" placeholder="Name here" class="form-control" name="name">
+            <!-- action="https://formspree.io/xrgywrrj" -->
+            <form id="form" method="post" action="https://script.google.com/macros/s/AKfycbwRzljNel0zm2HPMCCeuPIgQ7ZpmIs7tQ51PJiMN4aI-7RoFqo1_1BLgXsIdZeCGvdohg/exec">
+            <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group ">
+                          <input type="text" placeholder="Name here" class="form-control" name="name">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" placeholder="Email here" class="form-control" name="email">
+
+                      </div>
+                      <div class="form-group">
+                        <input type="text" placeholder="Email here" class="form-control" name="country">
+
                     </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Email here" class="form-control" name="_replyto">
                     </div>
-                    
-                    <div class="form-group">
-                        <textarea class="form-control" placeholder="Message" name="Message"></textarea>
+
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <textarea class="form-control" placeholder="Message" name="Message" rows="3" style="height:90px"></textarea>
+                      </div>
+                      </div>
+
+                   
                     </div>
-                    <div class="form-group text-center">
+                    <div class="form-group text-center mt-4">
                         <button class=" text-uppercase btn btn-success" type="submit">send message</button>
+
+                    </div>
                     
 
                 </form>
@@ -155,7 +180,7 @@
     </div>
 </section>
 <footer class="bg-dark text-white-70 text-center pt-2 pb-2">
-  <p>Copyright @ 2020 Digital Focus Medias</p>
+  <p class="text-white">Copyright @ 2020 Digital Focus Medias</p>
 </footer>
 
         
@@ -182,6 +207,23 @@
   s1.setAttribute('crossorigin','*');
   s0.parentNode.insertBefore(s1,s0);
   })();
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.scrollY;
+    let winHeight = window.innerHeight;
+    var docHeight = $(document).height();
+    var scrollPercent = (scrollTop) / (docHeight - winHeight);
+    let scrollPercentRounded = Math.round(scrollPercent * 100);
+    console.log(scrollPercentRounded);
+    let d = document.getElementById("pgs")
+       let per = document.getElementById("perc")
+       let v= d.value
+       v=scrollPercentRounded;
+       d.value = v;
+       per.innerHTML = v + "%"; 
+    });
+
+
   </script>
   <!--End of Tawk.to Script-->
 </html>

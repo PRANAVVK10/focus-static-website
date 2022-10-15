@@ -7,3 +7,61 @@ body{font-family: 'Fira Sans', sans-serif;}
         width:"200px";
     }
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .top-fit{
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    margin-top: -7px;
+  }
+  progress{
+    width: 100vw;
+    overflow-x: hidden;
+
+  }
+  #perc{
+    color: white;
+  }
+  .carousel-caption{
+    bottom: 35% !important;
+  }
+  .carousel-caption h5{
+    font-size: 5em;
+  }
+
+  .carousel-caption p{
+    font-size: 2em;
+  }
+  .carousel-caption button{
+    color: aqua;
+  }
+
+  img{
+    opacity: .7;
+  }
+
+#service-section img{
+    height: 200px;
+    width: 400px;
+
+}
